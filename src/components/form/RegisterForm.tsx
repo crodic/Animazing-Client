@@ -29,16 +29,9 @@ const RegisterForm = () => {
             </div>
             {/* Social Button */}
             <div className="grid grid-cols-3 gap-x-3">
-                <button
-                    onMouseEnter={() => setReset(false)}
-                    onMouseLeave={() => setReset(true)}
-                    className="group flex transform-gpu items-center justify-center rounded-lg border-2 border-border py-5 duration-150"
-                >
+                <button className="group flex transform-gpu items-center justify-center rounded-lg border-2 border-border py-5 duration-150">
                     <svg
-                        className={cn(
-                            'h-5 w-5 transition-all duration-300 group-hover:-translate-y-1',
-                            reset ? 'translate-y-0' : 'tranistion-transform',
-                        )}
+                        className={cn('h-5 w-5 transition-all duration-300 group-hover:-translate-y-1')}
                         viewBox="0 0 48 48"
                         fill="none"
                         xmlns="http://www.w3.org/2000/svg"
@@ -68,16 +61,9 @@ const RegisterForm = () => {
                         </defs>
                     </svg>
                 </button>
-                <button
-                    onMouseEnter={() => setReset(false)}
-                    onMouseLeave={() => setReset(true)}
-                    className="group flex transform-gpu items-center justify-center rounded-lg border-2 border-border py-5 duration-150"
-                >
+                <button className="group flex transform-gpu items-center justify-center rounded-lg border-2 border-border py-5 duration-150">
                     <svg
-                        className={cn(
-                            'h-5 w-5 transition-all duration-300 group-hover:-translate-y-1',
-                            reset ? 'translate-y-0' : 'tranistion-transform',
-                        )}
+                        className={cn('h-5 w-5 transition-all duration-300 group-hover:-translate-y-1')}
                         viewBox="0 0 48 48"
                         fill="none"
                         xmlns="http://www.w3.org/2000/svg"
@@ -88,16 +74,9 @@ const RegisterForm = () => {
                         />
                     </svg>
                 </button>
-                <button
-                    onMouseEnter={() => setReset(false)}
-                    onMouseLeave={() => setReset(true)}
-                    className="group flex transform-gpu items-center justify-center rounded-lg border-2 border-border py-5 duration-150"
-                >
+                <button className="group flex transform-gpu items-center justify-center rounded-lg border-2 border-border py-5 duration-150">
                     <svg
-                        className={cn(
-                            'h-5 w-5 transition-all duration-300 group-hover:-translate-y-1',
-                            reset ? 'translate-y-0' : 'tranistion-transform',
-                        )}
+                        className={cn('h-5 w-5 transition-all duration-300 group-hover:-translate-y-1')}
                         viewBox="0 0 48 48"
                         fill="currentColor"
                         xmlns="http://www.w3.org/2000/svg"
