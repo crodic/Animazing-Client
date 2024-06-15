@@ -7,10 +7,10 @@ const PublicLayout = ({
     children: ReactNode;
 }>) => {
     return (
-        <>
+        <div>
             <Navbar />
             {children}
-        </>
+        </div>
     );
 };
 

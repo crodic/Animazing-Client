@@ -6,6 +6,7 @@ import { ThemeToggle } from '../ThemeToggle';
 import SearchInput from './SearchInput';
 import Sidebar from '../sidebar/Sidebar';
 import WebLogo from '../WebLogo';
+import { Suspense } from 'react';
 
 const Navbar = () => {
     return (
@@ -17,7 +18,9 @@ const Navbar = () => {
                         <WebLogo />
                     </div>
                     <div className="hidden flex-1 md:block">
-                        <SearchInput />
+                        <Suspense>
+                            <SearchInput />
+                        </Suspense>
                     </div>
                     {/* Desktop Only */}
                     <div className="hidden items-center gap-8 md:flex">

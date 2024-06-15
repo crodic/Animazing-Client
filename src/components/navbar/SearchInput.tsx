@@ -2,7 +2,7 @@
 'use client';
 import { cn } from '@/lib/utils';
 import { Search } from 'lucide-react';
-import { useEffect, useMemo, useRef, useState } from 'react';
+import { useEffect, useMemo, useRef } from 'react';
 import { ScrollArea } from '../ui/scroll-area';
 import { usePathname, useRouter, useSearchParams } from 'next/navigation';
 import { useDebounceCallback } from 'usehooks-ts';
