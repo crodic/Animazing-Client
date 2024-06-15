@@ -1,28 +1,23 @@
-import { Dancing_Script } from 'next/font/google';
 import Container from '../Container';
-import Link from 'next/link';
-import { cn } from '@/lib/utils';
 import { Button } from '../ui/button';
-import { Bell, MenuIcon, Plus, Search } from 'lucide-react';
+import { Bell, Plus, Search } from 'lucide-react';
 import AccountDropdown from './AccountDropdown';
 import { ThemeToggle } from '../ThemeToggle';
-
-const dancingScript = Dancing_Script({ subsets: ['latin'], variable: '--dancing-script', weight: ['700'] });
+import SearchInput from './SearchInput';
+import Sidebar from '../sidebar/Sidebar';
+import WebLogo from '../WebLogo';
 
 const Navbar = () => {
     return (
-        <header className="bg-card py-4 text-card-foreground">
+        <header className="max-h-20 bg-card py-4 text-card-foreground">
             <Container>
-                <nav className="flex items-center justify-between">
-                    <div className="flex items-center gap-4">
-                        <Button size="icon" variant="ghost">
-                            <MenuIcon />
-                        </Button>
-                        <Link href="/">
-                            <h1 className={cn('text-2xl font-bold text-primary', dancingScript.className)}>
-                                Animazing
-                            </h1>
-                        </Link>
+                <nav className="flex items-center justify-between gap-10">
+                    <div className="flex items-center gap-8">
+                        <Sidebar />
+                        <WebLogo />
+                    </div>
+                    <div className="hidden flex-1 md:block">
+                        <SearchInput />
                     </div>
                     {/* Desktop Only */}
                     <div className="hidden items-center gap-8 md:flex">

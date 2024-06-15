@@ -9,6 +9,7 @@ import {
 } from '../ui/dropdown-menu';
 import { Avatar, AvatarFallback, AvatarImage } from '../ui/avatar';
 import { Heart, Images, LogOut, Settings, Trophy, UserRoundCog } from 'lucide-react';
+import BorderGradient from '../BorderGradient';
 
 const AccountDropdown = () => {
     // const uid = 'typ';
@@ -42,10 +43,12 @@ const AccountDropdown = () => {
     return (
         <DropdownMenu modal={false}>
             <DropdownMenuTrigger className="focus:rounded-full">
-                <Avatar className="size-12 cursor-pointer">
-                    <AvatarImage />
-                    <AvatarFallback>S</AvatarFallback>
-                </Avatar>
+                <BorderGradient isMembership isAvatar>
+                    <Avatar className="size-10 cursor-pointer overflow-hidden border-2 bg-background">
+                        <AvatarImage src="/avatar.png" className="object-cover object-top" />
+                        <AvatarFallback>S</AvatarFallback>
+                    </Avatar>
+                </BorderGradient>
             </DropdownMenuTrigger>
             <DropdownMenuContent align="end">
                 <DropdownMenuLabel>Account</DropdownMenuLabel>

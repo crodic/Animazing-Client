@@ -10,7 +10,7 @@ interface IContainer {
 const Container: FC<IContainer> = ({ children, disablePadding, as }) => {
     const Component = as || 'div';
     return (
-        <Component className={cn('mx-auto w-full max-w-7xl', !disablePadding && 'px-2 md:px-4 lg:px-6 xl:px-8')}>
+        <Component className={cn('mx-auto w-full max-w-7xl', !disablePadding && 'px-2 md:px-4 lg:px-5 xl:px-6')}>
             {children}
         </Component>
     );
