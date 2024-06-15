@@ -10,6 +10,7 @@ import {
 import { Avatar, AvatarFallback, AvatarImage } from '../ui/avatar';
 import { Heart, Images, LogOut, Settings, Trophy, UserRoundCog } from 'lucide-react';
 import BorderGradient from '../BorderGradient';
+import Link from 'next/link';
 
 const AccountDropdown = () => {
     // const uid = 'typ';
@@ -69,9 +70,11 @@ const AccountDropdown = () => {
                 <DropdownMenuSeparator />
                 <DropdownMenuLabel>Manager</DropdownMenuLabel>
                 <DropdownMenuGroup className="*:cursor-pointer *:text-base *:font-medium">
-                    <DropdownMenuItem inset>
-                        <Trophy size={16} className="mr-2" />
-                        <span>Membership</span>
+                    <DropdownMenuItem inset asChild>
+                        <Link href="/membership">
+                            <Trophy size={16} className="mr-2" />
+                            Membership
+                        </Link>
                     </DropdownMenuItem>
                     <DropdownMenuItem inset>
                         <Settings size={16} className="mr-2" />

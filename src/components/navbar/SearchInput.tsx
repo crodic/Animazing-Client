@@ -7,6 +7,7 @@ import { ScrollArea } from '../ui/scroll-area';
 import { usePathname, useRouter, useSearchParams } from 'next/navigation';
 import { useDebounceCallback } from 'usehooks-ts';
 import SearchItem from './SearchItem';
+import { useSearchToggle } from '@/hooks/useSearchToggle';
 
 const DELAY_SEARCH = 300;
 const VALUE_LENGTH = 10;
@@ -15,10 +16,11 @@ const SearchInput = () => {
     const searchParams = useSearchParams();
     const pathname = usePathname();
     const router = useRouter();
+    const { open, hideDropdown, showDropdown } = useSearchToggle();
 
     const searchValue = useMemo(() => searchParams.get('search'), [searchParams.get('search')]);
 
-    const [open, setOpen] = useState(false);
+    // const [open, setOpen] = useState(false);
     const debounce = useDebounceCallback(handleChangeInput, DELAY_SEARCH);
 
     const wrapperRef = useRef<HTMLDivElement>(null);
@@ -29,7 +31,7 @@ const SearchInput = () => {
             if (dropdownRef?.current?.contains(e.target) || wrapperRef?.current?.contains(e.target)) {
                 return;
             }
-            setOpen(false);
+            hideDropdown();
         };
         document.addEventListener('mousedown', handleClickOutSide, false);
         return () => document.removeEventListener('mousedown', handleClickOutSide, false);
@@ -106,13 +108,13 @@ const SearchInput = () => {
                     )}
                     defaultValue={searchParams.get('search') || ''}
                     onChange={(e) => debounce(e.target.value)}
-                    onFocus={() => setOpen(true)}
+                    onFocus={showDropdown}
                 />
             </div>
             {open && (
                 <div
                     ref={dropdownRef}
-                    className="absolute left-0 right-0 top-[120%] rounded-sm border bg-card text-card-foreground shadow-md"
+                    className="absolute left-0 right-0 top-[120%] z-50 rounded-sm border bg-card text-card-foreground shadow-md"
                 >
                     {searchValue ? renderSearchItem : renderPopularArtwork}
                 </div>
