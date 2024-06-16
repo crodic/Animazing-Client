@@ -3,6 +3,7 @@ import { Inter } from 'next/font/google';
 import './globals.css';
 import { cn } from '@/lib/utils';
 import AppProviders from '@/components/AppProviders';
+import BottomNavigation from '@/components/navbar/BottomNavigation';
 
 const inter = Inter({ subsets: ['latin'], variable: '--font-sans' });
 
@@ -19,7 +20,10 @@ export default function RootLayout({
     return (
         <html lang="en" suppressHydrationWarning>
             <body className={cn('min-h-screen bg-background font-sans antialiased', inter.variable)}>
-                <AppProviders>{children}</AppProviders>
+                <AppProviders>
+                    {children}
+                    <BottomNavigation />
+                </AppProviders>
             </body>
         </html>
     );

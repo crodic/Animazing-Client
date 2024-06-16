@@ -52,6 +52,13 @@ const AccountDropdown = () => {
                 </BorderGradient>
             </DropdownMenuTrigger>
             <DropdownMenuContent align="end">
+                <DropdownMenuLabel className="font-normal">
+                    <div className="flex flex-col space-y-1">
+                        <p className="text-sm font-medium leading-none">Crodic Crystal</p>
+                        <p className="text-xs leading-none text-muted-foreground">alice01422@gmail.com</p>
+                    </div>
+                </DropdownMenuLabel>
+                <DropdownMenuSeparator />
                 <DropdownMenuLabel>Account</DropdownMenuLabel>
                 <DropdownMenuGroup className="*:cursor-pointer *:text-base *:font-medium">
                     <DropdownMenuItem inset>

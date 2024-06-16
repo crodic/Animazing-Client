@@ -11,8 +11,7 @@ export const metadata: Metadata = {
 export default function MembershipPage() {
     return (
         <Container disablePadding>
-            <div className="relative overflow-hidden">
-                {/* <div className="-z-1 absolute inset-0 h-[600px] w-full"></div> */}
+            <div className="relative overflow-hidden drop-shadow-md">
                 <div className="mx-auto max-w-7xl px-6 pb-96 pt-24 text-center sm:pt-32 lg:px-8">
                     <div className="mx-auto max-w-4xl">
                         <h2 className="text-base font-semibold leading-7">Membership Animazing</h2>

@@ -17,7 +17,7 @@ export default function AdminPanelLayout({ children }: { children: React.ReactNo
             <main
                 className={cn(
                     'min-h-[calc(100vh_-_56px)] bg-background text-foreground transition-[margin-left] duration-300 ease-in-out',
-                    sidebar?.isOpen === false ? 'lg:ml-[90px]' : 'lg:ml-72',
+                    sidebar?.isOpen === false ? 'lg:ml-[80px]' : 'lg:ml-72',
                 )}
             >
                 {children}
@@ -25,7 +25,7 @@ export default function AdminPanelLayout({ children }: { children: React.ReactNo
             <footer
                 className={cn(
                     'transition-[margin-left] duration-300 ease-in-out',
-                    sidebar?.isOpen === false ? 'lg:ml-[90px]' : 'lg:ml-72',
+                    sidebar?.isOpen === false ? 'lg:ml-[80px]' : 'lg:ml-72',
                 )}
             >
                 <Footer />

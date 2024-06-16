@@ -13,7 +13,7 @@ export function SheetMenu() {
                     <MenuIcon size={20} />
                 </Button>
             </SheetTrigger>
-            <SheetContent className="flex h-full flex-col px-3 sm:w-72" side="left">
+            <SheetContent className="flex h-full flex-col bg-card px-3 sm:w-72" side="left">
                 <SheetHeader>
                     <Button className="flex items-center justify-center pb-2 pt-1" variant="link" asChild>
                         <Link href="/dashboard" className="flex items-center gap-2">

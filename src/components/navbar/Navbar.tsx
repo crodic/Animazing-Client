@@ -10,7 +10,7 @@ import { Suspense } from 'react';
 
 const Navbar = () => {
     return (
-        <header className="max-h-20 bg-card py-4 text-card-foreground">
+        <header className="max-h-20 min-w-[330px] bg-card py-4 text-card-foreground">
             <Container>
                 <nav className="flex items-center justify-between gap-10">
                     <div className="flex items-center gap-8">
