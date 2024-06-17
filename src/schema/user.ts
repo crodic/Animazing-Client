@@ -9,7 +9,10 @@ export const UserUpdateSchema = z.object({
         .max(50, 'Vui lòng nhập tên không quá 50 ký tự'),
     introduce: z.string().max(200, 'Vui lòng không nhập quá 200 ký tự'),
     phone: z.string().regex(phoneRegex, 'Số điện thoại không hợp lệ.'),
-    birthday: z.date().optional(),
+    birthday: z
+        .string()
+        .refine((value) => value.length > 0 && value.split('-').length > 2, { message: 'Ngày sinh không hợp lệ' })
+        .optional(),
     urls: z
         .array(
             z.object({

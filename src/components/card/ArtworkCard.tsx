@@ -17,7 +17,7 @@ interface IArtworkCard {
     isMembership?: boolean;
 }
 
-const ArtworkCard: FC<IArtworkCard> = ({ count, isLike, isR18, isMembership = true, type = 'artwork' }) => {
+const ArtworkCard: FC<IArtworkCard> = ({ count, isLike, isR18, isMembership = false, type = 'artwork' }) => {
     return (
         <BorderGradient
             as={isMembership ? 'div' : Card}
@@ -32,7 +32,7 @@ const ArtworkCard: FC<IArtworkCard> = ({ count, isLike, isR18, isMembership = tr
                         width={300}
                         height={300}
                         quality={100}
-                        className="aspect-square w-full rounded-none object-cover object-center sm:rounded-lg"
+                        className="aspect-square w-full rounded-none object-cover object-center"
                     />
                     <div className="absolute bottom-2 right-2">
                         <Heart

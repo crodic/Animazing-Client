@@ -59,6 +59,13 @@ const SearchInput = () => {
         </div>
     );
 
+    const handleEnter = (e: any) => {
+        if (searchParams.get('search') && e?.key === 'Enter' && e?.keyCode === 13) {
+            hideDropdown();
+            router.push(`/search?search=${searchParams.get('search')}`);
+        }
+    };
+
     const renderPopularArtwork = (
         <ScrollArea className={cn('h-[50vh] overflow-y-auto p-4')}>
             <div className="space-y-2">
@@ -106,6 +113,7 @@ const SearchInput = () => {
                     className={cn(
                         'flex h-10 w-full grow rounded-md border-none bg-transparent py-3 text-sm outline-none placeholder:text-muted-foreground disabled:cursor-not-allowed disabled:opacity-50',
                     )}
+                    onKeyDown={handleEnter}
                     defaultValue={searchParams.get('search') || ''}
                     onChange={(e) => debounce(e.target.value)}
                     onFocus={showDropdown}

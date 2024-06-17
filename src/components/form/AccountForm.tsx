@@ -7,10 +7,7 @@ import { Input } from '../ui/input';
 import { Textarea } from '../ui/textarea';
 import { Button } from '../ui/button';
 import { cn } from '@/lib/utils';
-import { CalendarForm } from './CalendarForm';
-import { Popover, PopoverContent, PopoverTrigger } from '../ui/popover';
-import { CalendarIcon } from 'lucide-react';
-import { format } from 'date-fns';
+import DateSelect from '../DateSelect';
 
 const AccountForm = () => {
     const form = useForm<UseUpdateSchemaType>({
@@ -83,37 +80,9 @@ const AccountForm = () => {
                     control={form.control}
                     name="birthday"
                     render={({ field }) => (
-                        <FormItem className="flex flex-col">
-                            <FormLabel>Date of birth</FormLabel>
-                            <Popover>
-                                <PopoverTrigger asChild>
-                                    <FormControl>
-                                        <Button
-                                            variant={'outline'}
-                                            className={cn(
-                                                'w-[240px] pl-3 text-left font-normal',
-                                                !field.value && 'text-muted-foreground',
-                                            )}
-                                        >
-                                            {field.value ? format(field.value, 'PPP') : <span>Pick a date</span>}
-                                            <CalendarIcon className="ml-auto h-4 w-4 opacity-50" />
-                                        </Button>
-                                    </FormControl>
-                                </PopoverTrigger>
-                                <PopoverContent className="w-auto p-0" align="start">
-                                    <CalendarForm
-                                        mode="single"
-                                        selected={field.value}
-                                        onSelect={field.onChange}
-                                        disabled={(date) => date > new Date() || date < new Date('1900-01-01')}
-                                        initialFocus
-                                        captionLayout="dropdown-buttons"
-                                        toYear={new Date().getFullYear()}
-                                        fromYear={1900}
-                                    />
-                                </PopoverContent>
-                            </Popover>
-                            <FormDescription>Your date of birth is used to calculate your age.</FormDescription>
+                        <FormItem>
+                            <FormLabel>Birthday</FormLabel>
+                            <DateSelect value={field.value || ''} onChange={field.onChange} />
                             <FormMessage />
                         </FormItem>
                     )}
