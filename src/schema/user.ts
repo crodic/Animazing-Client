@@ -26,7 +26,6 @@ export type UseUpdateSchemaType = z.infer<typeof UserUpdateSchema>;
 
 export const UserDisplaySchema = z.object({
     'ai-generate': z.enum(['true', 'false']).default('true'),
-    r18: z.enum(['true', 'false']).default('false'),
 });
 
 export type UserDisplayType = z.infer<typeof UserDisplaySchema>;

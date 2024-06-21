@@ -1,6 +1,7 @@
 import Container from '@/components/Container';
 import { Select, SelectContent, SelectItem, SelectTrigger, SelectValue } from '@/components/ui/select';
 import ArtworkSearchList from '@/views/client/searchPage/ArtworkSearchList';
+import TagInfo from '@/views/client/searchPage/TagInfo';
 import { Search } from 'lucide-react';
 
 const SearchPage = ({ searchParams }: { searchParams: any }) => {
@@ -27,7 +28,7 @@ const SearchPage = ({ searchParams }: { searchParams: any }) => {
                         </Select>
                     </div>
                 </div>
-
+                <TagInfo />
                 <ArtworkSearchList />
             </main>
         </Container>

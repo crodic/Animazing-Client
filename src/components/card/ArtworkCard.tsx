@@ -12,12 +12,11 @@ import BorderGradient from '../BorderGradient';
 interface IArtworkCard {
     count?: number;
     isLike?: boolean;
-    isR18?: boolean;
     type?: 'artwork' | 'manga';
     isMembership?: boolean;
 }
 
-const ArtworkCard: FC<IArtworkCard> = ({ count, isLike, isR18, isMembership = false, type = 'artwork' }) => {
+const ArtworkCard: FC<IArtworkCard> = ({ count, isLike, isMembership = false }) => {
     return (
         <BorderGradient
             as={isMembership ? 'div' : Card}
@@ -37,19 +36,14 @@ const ArtworkCard: FC<IArtworkCard> = ({ count, isLike, isR18, isMembership = fa
                     <div className="absolute bottom-2 right-2">
                         <Heart
                             className={cn(
-                                'size-8 fill-white stroke-black transition-all duration-100 hover:scale-110 hover:fill-destructive md:size-6',
+                                'size-8 fill-white stroke-black transition-all duration-100 sm:hover:scale-110 sm:hover:fill-destructive sm:size-6',
                                 isLike && 'fill-destructive',
                             )}
                         />
                     </div>
-                    {isR18 && (
-                        <div className="absolute left-0 top-0 flex select-none items-center justify-center bg-destructive p-1 text-xs text-destructive-foreground">
-                            R18
-                        </div>
-                    )}
                     <div className="pointer-events-none absolute inset-0 z-10 group-hover:bg-muted/20"></div>
                 </div>
-                <div className="hidden space-y-1 px-3 py-2 md:block">
+                <div className="hidden space-y-1 px-3 py-2 sm:block">
                     <h5 className="line-clamp-1 text-sm font-semibold">Honkai star rail - Jingliu</h5>
                     <div className="flex items-center gap-2">
                         <Avatar className="size-7">
@@ -60,7 +54,7 @@ const ArtworkCard: FC<IArtworkCard> = ({ count, isLike, isR18, isMembership = fa
                         <Separator orientation="vertical" className="h-5" />
                         <span className="flex items-center gap-1 text-xs">
                             <Layers size={10} />
-                            12
+                            {count || 12}
                         </span>
                     </div>
                 </div>

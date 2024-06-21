@@ -21,7 +21,9 @@ export default function RootLayout({
         <html lang="en" suppressHydrationWarning>
             <body className={cn('min-h-screen bg-background font-sans antialiased', inter.variable)}>
                 <AppProviders>
-                    {children}
+                    <div className='mb-20 md:mb-8'>
+                        {children}
+                    </div>
                     <BottomNavigation />
                 </AppProviders>
             </body>

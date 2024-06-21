@@ -1,10 +1,10 @@
-import { Metadata } from 'next';
+import { Card, CardContent } from '@/components/ui/card';
 
+import Container from '@/components/Container';
+import { Metadata } from 'next';
+import Navbar from '@/components/navbar/Navbar';
 import { Separator } from '@/components/ui/separator';
 import { SidebarSetting } from '@/components/sidebar/SidebarSetting';
-import Navbar from '@/components/navbar/Navbar';
-import Container from '@/components/Container';
-import { Card, CardContent } from '@/components/ui/card';
 
 export const metadata: Metadata = {
     title: 'Forms',
@@ -45,7 +45,6 @@ interface SettingsLayoutProps {
 export default function SettingsLayout({ children }: SettingsLayoutProps) {
     return (
         <>
-            <Navbar />
             <Container>
                 <Card className="mt-10 py-8">
                     <CardContent className="space-y-6">

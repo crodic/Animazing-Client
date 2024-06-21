@@ -26,8 +26,4 @@ export const FILTER_ITEMS = [
         label: 'ALL AGE',
         value: 'age',
     },
-    {
-        label: 'R18',
-        value: 'r18',
-    },
 ];

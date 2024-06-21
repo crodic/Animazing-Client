@@ -12,22 +12,22 @@ const Navigation = [
     {
         label: 'Artwork',
         path: '/',
-        icon: <Images />,
+        icon: <Images size={18} />,
     },
     {
         label: 'Manga',
         path: '/manga',
-        icon: <Image />,
+        icon: <Image size={18} />,
     },
     {
         label: 'Light Novel',
         path: '/light-novel',
-        icon: <BookImage />,
+        icon: <BookImage size={18} />,
     },
     {
         label: 'Cosplay',
         path: '/cosplay',
-        icon: <SquareUserRound />,
+        icon: <SquareUserRound size={18} />,
     },
 ];
 
@@ -47,8 +47,11 @@ const BottomNavigation = () => {
                                             nav.path === pathname && 'border-primary bg-muted',
                                         )}
                                     >
-                                        <Link className={cn('block p-4')} href={nav.path}>
+                                        <Link className={cn('p-2 flex flex-col justify-center items-center gap-1')} href={nav.path}>
                                             {nav.icon}
+                                            <span className='text-xs font-medium'>
+                                                {nav.label}
+                                            </span>
                                         </Link>
                                     </li>
                                 </TooltipTrigger>
