@@ -4,6 +4,7 @@ import TabArtworkContent from '@/views/client/createArtworkPage/TabArtworkConten
 import TabCosplayContent from '@/views/client/createArtworkPage/TabCosplayContent';
 import TabLightNovelContent from '@/views/client/createArtworkPage/TabLightNovelContent';
 import TabMangaContent from '@/views/client/createArtworkPage/TabMangaContent';
+import { ScrollArea, ScrollBar } from '../ui/scroll-area';
 
 const tabItems = [
     {
@@ -48,18 +49,23 @@ const TabContentCreate = () => {
 
     return (
         <Tabs defaultValue="artwork">
-            <TabsList className="w-max">
-                {tabItems.map((tab, index) => (
-                    <TabsTrigger key={index} value={tab.value} className="flex-1 capitalize">
-                        {tab.label}
-                    </TabsTrigger>
-                ))}
-            </TabsList>
+            <ScrollArea>
+                <div className="w-max sm:w-full relative h-11">
+                    <TabsList className="flex absolute sm:relative h-auto">
+                        {tabItems.map((tab, index) => (
+                            <TabsTrigger key={index} value={tab.value} className="flex-1 capitalize">
+                                {tab.label}
+                            </TabsTrigger>
+                        ))}
+                    </TabsList>
+                </div>
+                <ScrollBar orientation="horizontal" />
+            </ScrollArea>
             {ArtworkTab}
             {MangaTab}
             {LightNovelTab}
             {CosplayTab}
-        </Tabs>
+        </Tabs >
     );
 };
 

@@ -83,9 +83,11 @@ const AccountDropdown = () => {
                             Membership
                         </Link>
                     </DropdownMenuItem>
-                    <DropdownMenuItem inset>
-                        <Settings size={16} className="mr-2" />
-                        <span>Cài Đặt</span>
+                    <DropdownMenuItem inset asChild>
+                        <Link href="/settings">
+                            <Settings size={16} className="mr-2" />
+                            <span>Cài Đặt</span>
+                        </Link>
                     </DropdownMenuItem>
                 </DropdownMenuGroup>
                 <DropdownMenuSeparator />
