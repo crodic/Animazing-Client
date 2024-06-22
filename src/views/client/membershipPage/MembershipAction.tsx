@@ -12,7 +12,7 @@ const MembershipAction = () => {
                 <CircleAlert size={10} />
                 Gói hiện tại không thể dùng tính năng Membership
             </p>
-            <div className="flex gap-4">
+            <div className="flex flex-col sm:flex-row gap-4">
                 <Button asChild variant="warning">
                     <Link href="/membership">Nâng Cấp Tài Khoản</Link>
                 </Button>
