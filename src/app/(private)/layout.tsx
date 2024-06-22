@@ -1,3 +1,4 @@
+import BottomNavigation from '@/components/navbar/BottomNavigation';
 import Navbar from '@/components/navbar/Navbar';
 import React from 'react';
 
@@ -8,8 +9,11 @@ interface PrivateLayoutProps {
 const PrivateLayout = ({ children }: PrivateLayoutProps) => {
     return (
         <>
-            <Navbar />
-            {children}
+            <div className='mb-20 md:mb-8'>
+                <Navbar />
+                {children}
+            </div>
+            <BottomNavigation />
         </>
     );
 };

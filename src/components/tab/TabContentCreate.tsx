@@ -48,7 +48,7 @@ const TabContentCreate = () => {
 
     return (
         <Tabs defaultValue="artwork">
-            <TabsList className="w-full">
+            <TabsList className="w-max">
                 {tabItems.map((tab, index) => (
                     <TabsTrigger key={index} value={tab.value} className="flex-1 capitalize">
                         {tab.label}

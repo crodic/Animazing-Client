@@ -3,7 +3,6 @@ import { Inter } from 'next/font/google';
 import './globals.css';
 import { cn } from '@/lib/utils';
 import AppProviders from '@/components/AppProviders';
-import BottomNavigation from '@/components/navbar/BottomNavigation';
 
 const inter = Inter({ subsets: ['latin'], variable: '--font-sans' });
 
@@ -24,7 +23,6 @@ export default function RootLayout({
                     <div className='mb-20 md:mb-8'>
                         {children}
                     </div>
-                    <BottomNavigation />
                 </AppProviders>
             </body>
         </html>
